@@ -1,0 +1,101 @@
+<div class="container mt-5">
+  <form
+    [formGroup]="registrationForm"
+    (ngSubmit)="onSubmit()"
+    class="p-4 bg-light rounded"
+  >
+    <h3 class="mb-4">Registrazione</h3>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nome">Nome:</label>
+        <input
+          type="text"
+          formControlName="nome"
+          id="nome"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="cognome">Cognome:</label>
+        <input
+          type="text"
+          formControlName="cognome"
+          id="cognome"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="confermaPassword">Conferma Password:</label>
+        <input
+          type="password"
+          formControlName="confermaPassword"
+          id="confermaPassword"
+          class="form-control"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="genere">Genere:</label>
+      <select
+        formControlName="genere"
+        id="genere"
+        class="form-control"
+        required
+      >
+        <option value="maschio">Maschio</option>
+        <option value="femmina">Femmina</option>
+        <option value="altro">Altro</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="immagineProfilo">Immagine Profilo:</label>
+      <input
+        type="file"
+        formControlName="immagineProfilo"
+        id="immagineProfilo"
+        class="form-control-file"
+      />
+    </div>
+    <div class="form-group">
+      <label for="biografia">Biografia:</label>
+      <textarea
+        formControlName="biografia"
+        id="biografia"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        formControlName="username"
+        id="username"
+        class="form-control"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!registrationForm.valid"
+    >
+      Registra
+    </button>
+  </form>
+</div>
